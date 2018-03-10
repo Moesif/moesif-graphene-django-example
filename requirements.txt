@@ -1,0 +1,4 @@
+Django==2.0.2
+graphene==2.0.1
+django-filter==1.1.0
+graphene-django==2.0.0
