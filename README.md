@@ -36,7 +36,7 @@ python manage.py migrate
 ##### Create mock data
 
 ```bash
-$ python
+$ python manage.py shell
 >>> from events.models import Event
 >>> Event.objects.create(name='API Analytics', url='https://www.moesif.com/')
 >>> Event.objects.create(name='Trove Marketplace', url='https://www.trove.com/')
