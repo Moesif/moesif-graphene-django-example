@@ -53,6 +53,7 @@ MIDDLEWARE = [
     'graphql_jwt.middleware.JSONWebTokenMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'moesifdjango.middleware.moesif_middleware',
 ]
 
 ROOT_URLCONF = 'graphene_python.urls'
@@ -110,6 +111,44 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+
+# User Id
+def identifyUser(req, res):
+    # if your setup do not use the standard request.user.username
+    # return the user id here
+    return '12345'
+
+
+# Company Id
+def identifyCompany(req, res):
+    # return the company id here
+    return '67890'
+
+
+# Metadata
+def get_metadata(req, res):
+    return {
+        'foo': '12345',
+        'bar': '67890',
+    }
+
+
+# Mask Event
+def mask_event(eventmodel):
+    # do something to remove sensitive fields
+    # be sure not to remove any required fields.
+    return eventmodel
+
+
+MOESIF_MIDDLEWARE = {
+    'APPLICATION_ID': 'Your Moesif Application Id',
+    'LOG_BODY': True,
+    'IDENTIFY_USER': identifyUser,
+    'IDENTIFY_COMPANY': identifyCompany,
+    'GET_METADATA': get_metadata,
+    'MASK_EVENT_MODEL': mask_event,
+
+}
 
 # Internationalization
 # https://docs.djangoproject.com/en/2.0/topics/i18n/

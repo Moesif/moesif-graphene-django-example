@@ -3,3 +3,5 @@ graphene==2.0.1
 django-filter==1.1.0
 django-graphql-jwt==0.1.5
 graphene-django==2.0.0
+mongoengine
+moesifdjango
