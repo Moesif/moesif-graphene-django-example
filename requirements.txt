@@ -1,4 +1,4 @@
-Django==2.2.10
+Django==2.2.18
 graphene==2.0.1
 django-filter==1.1.0
 django-graphql-jwt==0.1.5
