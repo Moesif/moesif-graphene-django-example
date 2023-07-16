@@ -1,6 +1,6 @@
 Django==2.2.10
 graphene==2.0.1
-django-filter==1.1.0
+django-filter==2.4.0
 django-graphql-jwt==0.1.5
 graphene-django==2.0.0
 mongoengine
